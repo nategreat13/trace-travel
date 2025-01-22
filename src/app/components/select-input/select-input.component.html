@@ -1,0 +1,11 @@
+<select
+  class="select"
+  (change)="onSelect($event)"
+  id="dropdown"
+  [value]="selectedValue()"
+>
+  <option value="" label="{{ placeholder() }}"></option>
+  @for (option of options(); track $index) {
+  <option [value]="option.value" [label]="option.label"></option>
+  }
+</select>
