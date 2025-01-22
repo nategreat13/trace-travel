@@ -1,0 +1,94 @@
+<div class="login-signup-page-body">
+  <div class="login-signup-page-inner-container">
+    <img class="login-signup-page-logo" src="/assets/logo-black-text.png" />
+    <div class="login-signup-page-blue-header blue-text">
+      Login to your account
+    </div>
+    <div
+      class="login-signup-page-subtitle"
+      [innerHTML]="
+        'Have you logged in to our new website yet? If not, please *SIGN UP* now.'
+          | markdownCustomClass : 'orange-text weight-600'
+      "
+    ></div>
+    <div class="login-signup-page-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-inner">
+          <div class="input-container">
+            <label class="form-label" for="email">Email</label>
+            <input
+              class="form-field"
+              id="email"
+              formControlName="email"
+              type="email"
+            />
+            <div
+              *ngIf="
+                loginForm.get('email')?.invalid &&
+                loginForm.get('email')?.touched
+              "
+            >
+              <small
+                class="form-error"
+                *ngIf="loginForm.get('email')?.errors?.['required']"
+                >Email is required.</small
+              >
+              <small
+                class="form-error"
+                *ngIf="loginForm.get('email')?.errors?.['email']"
+                >Invalid email format.</small
+              >
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label class="form-label" for="password">Password</label>
+            <input
+              class="form-field"
+              id="password"
+              formControlName="password"
+              type="password"
+            />
+            <div
+              *ngIf="
+                loginForm.get('password')?.invalid &&
+                loginForm.get('password')?.touched
+              "
+            >
+              <small
+                class="form-error"
+                *ngIf="loginForm.get('password')?.errors?.['required']"
+                >Password is required.</small
+              >
+              <small
+                class="form-error"
+                *ngIf="loginForm.get('password')?.errors?.['minLength']"
+              >
+                Password must be at least 6 characters.
+              </small>
+            </div>
+          </div>
+
+          <a class="forgot-password">Forgot Password?</a>
+
+          <button
+            class="blue-button"
+            type="submit"
+            [disabled]="loginForm.invalid || isLoggingIn()"
+          >
+            Log In
+          </button>
+          <div class="dont-have-account-row">
+            <div class="dont-have-account-question">Don't have an account?</div>
+            <a
+              routerLink="/signup"
+              class="dont-have-account-button orange-text uppercase weight-600"
+            >
+              Sign up
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

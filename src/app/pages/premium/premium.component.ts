@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { DealsService } from '../../../services/deals/deals.service';
+import { DealsService } from '../../services/deals/deals.service';
 import { Deal } from '../../model/deal.type';
 import { catchError, of, single } from 'rxjs';
 import { DealCardComponent } from '../../components/deal-card/deal-card.component';

@@ -15,6 +15,10 @@
   font-family: "Outfit", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:hover {
   opacity: 0.5;
 }
@@ -30,22 +34,28 @@ a:active {
 }
 
 .blue-button {
-  font-size: 14px;
-  line-height: 20px;
-  padding: 10px 22px;
   background-color: var(--blue);
   color: white;
-  border-radius: 30px;
-  text-decoration: none;
+  text-align: center;
   text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
+  cursor: pointer;
+  border-radius: 100px;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 20px;
+  font-family: Outfit, sans-serif;
+  font-size: 18px;
   font-weight: 600;
+  line-height: 18px;
 }
 
 .blue-button:hover {
   opacity: 0.8;
+}
+
+.blue-button:disabled {
+  opacity: 0.5;
 }
 
 html,
@@ -76,6 +86,106 @@ body {
 .select:focus {
   outline: none; /* Remove default outline */
   border: 1px solid var(--blue) !important;
+}
+
+.blue-text {
+  color: var(--blue);
+}
+
+.orange-text {
+  color: var(--orange);
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.login-signup-page-body {
+  display: flex;
+  padding-top: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-signup-page-inner-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-signup-page-logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.login-signup-page-blue-header {
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.login-signup-page-subtitle {
+  margin-top: 8px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.login-signup-page-form {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.form-field {
+  background-color: var(--form-input-background);
+  border-radius: 8px;
+  height: 24px;
+  font-family: Outfit, sans-serif;
+  color: #333;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  display: block;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.form-label {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-family: Outfit, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.form-error {
+  color: red;
+}
+
+button {
+  border: 0px;
+}
+
+.form-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 @media (max-width: 992px) {

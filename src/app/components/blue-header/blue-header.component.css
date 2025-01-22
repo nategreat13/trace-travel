@@ -1,0 +1,28 @@
+.blue-header {
+  background-image: url("/assets/blue-header-background.png");
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  text-align: center;
+  background-position: 0 0;
+  background-size: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  display: flex;
+}
+.blue-header-title {
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.blue-header-body {
+  color: white;
+  line-height: 35px;
+  text-align: center;
+  max-width: 600px;
+  font-size: 22px;
+}

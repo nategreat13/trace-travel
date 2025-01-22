@@ -16,4 +16,18 @@ export const routes: Routes = [
       );
     },
   },
+  {
+    path: 'faqs',
+    loadComponent() {
+      return import('./pages/faqs/faqs.component').then((m) => m.FaqsComponent);
+    },
+  },
+  {
+    path: 'login',
+    loadComponent() {
+      return import('./pages/login/login.component').then(
+        (m) => m.LoginComponent
+      );
+    },
+  },
 ];

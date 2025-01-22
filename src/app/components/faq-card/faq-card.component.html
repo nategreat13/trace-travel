@@ -1,0 +1,14 @@
+<div class="faq-card">
+  <div (click)="toggleExpanded()" class="faq-title-row">
+    <div class="faq-title">{{ title() }}</div>
+    <div class="faq-icon">
+      <img
+        class="faq-icon-img"
+        [src]="
+          isExpanded() ? '/assets/blue-minus.png' : '/assets/gray-plus.png'
+        "
+      />
+    </div>
+  </div>
+  <div class="faq-body" [class.hidden]="!isExpanded()">{{ body() }}</div>
+</div>
