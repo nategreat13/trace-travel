@@ -1,0 +1,102 @@
+.logo {
+  height: 24px;
+}
+
+.active-link {
+  color: var(--orange);
+}
+
+.logo-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.nav-hamburger {
+  display: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  max-width: 1280px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: var(--blue);
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.hamburger-icon {
+  color: var(--text-color);
+}
+
+@media (max-width: 992px) {
+  .nav {
+    transform: scaleY(0); /* Start collapsed */
+    transform-origin: top; /* Anchor scaling to the top */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth animation */
+    overflow: hidden; /* Prevent content overflow when collapsed */
+    opacity: 0; /* Hide the element visually */
+    position: absolute;
+    top: 76px;
+    right: 0px;
+    background-color: white;
+    width: 100%;
+    flex-direction: column; /* Stack items vertically when expanded */
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .blue-button {
+    margin: 24px 0px;
+  }
+
+  .nav-link:hover {
+    background-color: var(--background-color);
+  }
+
+  .nav.expanded {
+    transform: scaleY(1); /* Fully expanded */
+    opacity: 1; /* Fully visible */
+  }
+
+  .nav-hamburger {
+    display: block;
+    padding: 24px 20px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}

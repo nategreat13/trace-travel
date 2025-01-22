@@ -1,0 +1,146 @@
+<div class="card">
+  <div>
+    <div class="w-embed">
+      <div class="aspect-w-3 aspect-h-2">
+        <img [src]="deal().imageUrl" alt="Deal Image" class="pic" />
+        <div class="discount-tag" style="background-color: rgb(101, 231, 101)">
+          {{ deal().percentOff }}% OFF
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 8px; padding-bottom: 8px">
+      <div style="align-items: center; display: flex">
+        <div style="display: flex; flex: 1">
+          <div style="flex: 0 auto; font-size: 11px; line-height: 11px">
+            Departs from
+          </div>
+          <div
+            style="
+              flex: 1;
+              font-size: 11px;
+              line-height: 11px;
+              margin-left: 2px;
+            "
+          >
+            {{ deal().origin }}
+          </div>
+        </div>
+        <div
+          style="
+            grid-column-gap: 4px;
+            grid-row-gap: 4px;
+            align-items: center;
+            display: flex;
+          "
+        >
+          <img
+            src="https://cdn.prod.website-files.com/65260a741084758d8cdb6dff/6531e531ba7596c721660f98_Vector.svg"
+            loading="lazy"
+            alt=""
+            style="width: 6px; height: 6px"
+          />
+          <div style="font-weight: 500; line-height: 14px; color: #fa883c">
+            {{ deal().layoverInfo }}
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          margin-top: 12px;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 24px;
+          display: block;
+        "
+      >
+        {{ deal().destination }}
+      </div>
+      <div style="align-items: center; margin-top: 12px; display: flex">
+        <div
+          style="
+            justify-content: center;
+            align-items: center;
+            width: 12px;
+            height: 12px;
+            margin-right: 12px;
+            display: flex;
+          "
+        >
+          <img
+            src="https://cdn.prod.website-files.com/65260a741084758d8cdb6dff/6531e623274cb79e14be3575_Calendar.svg"
+            loading="lazy"
+            alt=""
+            style="height: 100%"
+          />
+        </div>
+        <div style="line-height: 14px">{{ deal().dateString }}</div>
+      </div>
+      <div style="align-items: center; margin-top: 12px; display: flex">
+        <div
+          style="
+            justify-content: center;
+            align-items: center;
+            width: 12px;
+            height: 12px;
+            margin-right: 12px;
+            display: flex;
+          "
+        >
+          <img
+            src="https://cdn.prod.website-files.com/65260a741084758d8cdb6dff/6531e623274cb79e14be3575_Calendar.svg"
+            loading="lazy"
+            alt=""
+            style="height: 100%"
+          />
+        </div>
+        <div style="line-height: 14px">Price will Last:</div>
+        <div style="margin-left: 8px; font-weight: 500">
+          {{ deal().priceWillLastText }}
+        </div>
+      </div>
+      <div style="align-items: center; margin-top: 20px; display: flex">
+        <div
+          style="
+            margin-right: 12px;
+            font-size: 16px;
+            line-height: 16px;
+            text-decoration: line-through;
+            color: #c4c4c4;
+          "
+        >
+          ${{ deal().normalPriceUSD }}
+        </div>
+        <div
+          style="
+            flex: 1;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 28px;
+            color: #3d9be9;
+          "
+        >
+          ${{ deal().dealPriceUSD }}
+        </div>
+        <a
+          [href]="deal().url"
+          style="
+            font-size: 14px;
+            line-height: 14px;
+            background-color: #3d9be9;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 100px;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px 20px;
+            font-weight: 600;
+            text-decoration: none;
+          "
+          >GET DEAL</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

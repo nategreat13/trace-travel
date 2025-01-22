@@ -1,0 +1,7 @@
+<div class="deals">
+  @for (deal of deals() ; track deal.id) {
+  <div>
+    <app-deal-card [deal]="deal" />
+  </div>
+  }
+</div>

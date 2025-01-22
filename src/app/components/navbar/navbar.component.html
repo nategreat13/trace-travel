@@ -1,0 +1,49 @@
+<header class="header">
+  <div class="container">
+    <a routerLink="/" class="logo"
+      ><img src="/assets/logo-black-text.png" alt="Trace Logo" class="logo-img"
+    /></a>
+    <nav class="nav" [class.expanded]="isExpanded()">
+      <a
+        routerLink="/premium"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >Premium</a
+      >
+      <a
+        routerLink="/who-we-are"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >Who We Are</a
+      >
+      <a
+        routerLink="/success-stories"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >Success Stories</a
+      >
+      <a
+        routerLink="/affiliate"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >Become an Affiliate</a
+      >
+      <a
+        routerLink="/faqs"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >FAQs</a
+      >
+      <a
+        routerLink="/contact"
+        class="nav-link text-normal"
+        routerLinkActive="active-link"
+        >Contact</a
+      >
+      <a routerLink="/login" class="blue-button">Login</a>
+    </nav>
+    <a (click)="toggleExpanded()" class="nav-hamburger"
+      ><mat-icon class="hamburger-icon">menu</mat-icon></a
+    >
+  </div>
+</header>

@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "public": "dist/trace-travel/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

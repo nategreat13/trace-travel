@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --blue: #3d9be9;
+  --orange: #fa883c;
+  --background-color: #f5fafe;
+  --text-color: #041421;
+  --orange-rgb: rgba(250, 136, 60, 0.1); /* Predefine RGBA */
+}
+
+.body {
+  background-color: var(--background-color);
+  margin: 0px;
+  font-family: "Outfit", sans-serif;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+a:active {
+  opacity: 0.7;
+}
+
+.text-normal {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+.blue-button {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 22px;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.blue-button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 576px) {
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

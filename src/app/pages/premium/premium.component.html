@@ -1,0 +1,6 @@
+<app-navbar />
+<!-- <button (click)="getDealsFromOrigin('SLC')">SLC</button>
+<button (click)="getDealsFromOrigin('DEN')">DEN</button> -->
+@if (isLoading()) {
+<div>Loading...</div>
+} @else {<app-deal-grid [deals]="deals()" />}
