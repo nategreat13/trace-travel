@@ -1,0 +1,285 @@
+.orange-section {
+  background-color: var(--orange);
+  margin: 0px 60px -180px 60px;
+  padding: 30px 60px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.title {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.item-row {
+  display: flex;
+  margin-top: 12px;
+  gap: 12px;
+  align-items: center;
+}
+
+.check-icon {
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-text {
+  color: white;
+}
+
+.special-container {
+  width: 90%;
+  max-height: calc(100% - 120px);
+  overflow-y: auto;
+  margin-top: 60px;
+}
+
+.special-modal-content {
+  margin-top: -0px;
+  width: auto;
+  padding-top: 240px;
+}
+
+.gradient-line {
+  background-image: linear-gradient(
+    90deg,
+    var(--orange),
+    white 50%,
+    var(--orange) 104%
+  );
+  width: 100%;
+  height: 2px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.card-image {
+  height: 200px;
+  border-radius: 16px;
+  margin-top: -32px;
+}
+
+.carousel-card {
+  background-color: rgba(15, 212, 158, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.carousel-row {
+  display: flex;
+}
+.carousel-inner {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0px 8px 30px;
+  gap: 16px;
+}
+
+.destination {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 15px;
+  line-height: 15px;
+  color: #208d57;
+}
+
+.quote {
+  font-size: 15px;
+  line-height: 15px;
+  font-style: italic;
+}
+
+.testimonial-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  object-fit: cover;
+}
+
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.price-section {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.price-original {
+  color: red;
+  text-decoration: line-through;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.price-new {
+  color: #208d57;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.round-trip-text {
+  color: #208d57;
+  font-weight: 300px;
+}
+
+.carousel-slide-row {
+  display: flex;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%; /* Set your desired width */
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* Adjust based on the number of items */
+}
+
+.carousel-item {
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px 30px 0px 30px;
+}
+
+.carousel-marker-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.carousel-marker {
+  height: 5px;
+  width: 35px;
+  background-color: var(--orange);
+  border-radius: 4px;
+  opacity: 0.2;
+}
+
+.carousel-marker-active {
+  opacity: 1;
+}
+
+.carousel-main {
+  display: flex;
+}
+
+.testimonial-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .orange-section {
+    margin: 0px 30px -180px 30px;
+    padding: 15px 30px;
+  }
+
+  .title {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .check-icon {
+    font-size: 16px;
+  }
+
+  .item-text {
+    color: white;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .card-image {
+    height: 100px;
+  }
+
+  .carousel-card {
+    background-color: rgba(15, 212, 158, 0.2);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .destination {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .quote {
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .price-original {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .price-new {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .round-trip-text {
+    font-size: 10px;
+  }
+
+  .carousel-inner {
+    margin-left: 8px;
+  }
+
+  .testimonial-desktop {
+    display: none;
+  }
+
+  .testimonial-mobile {
+    display: flex;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .price-original {
+    display: none;
+  }
+
+  .destination {
+    max-width: 100px;
+  }
+}

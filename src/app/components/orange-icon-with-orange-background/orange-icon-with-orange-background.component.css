@@ -1,5 +1,5 @@
 .container {
-  background-color: var(--orange-rgb);
+  background-color: var(--orange-10-perc-opacity);
   border-radius: 60px;
   height: 60px;
   width: 60px;

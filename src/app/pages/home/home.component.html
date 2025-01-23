@@ -1,4 +1,6 @@
-<app-navbar />
+<app-navbar /><button (click)="clickShowPremiumPopup()">
+  Show Premium Popup
+</button>
 <div class="home-image-container">
   <div class="home-image-left-column">
     <div class="home-image-left-title-container">
@@ -67,4 +69,8 @@
     </div>
   </div>
   <app-get-started-blue-button text="30 day free trial" />
+  <app-premium-popup
+    *ngIf="showPremiumPopup()"
+    (onClose)="onClosePremiumPopup()"
+  />
 </div>

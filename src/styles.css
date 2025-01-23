@@ -5,7 +5,8 @@
   --orange: #fa883c;
   --background-color: #f5fafe;
   --text-color: #041421;
-  --orange-rgb: rgba(250, 136, 60, 0.1); /* Predefine RGBA */
+  --orange-10-perc-opacity: rgba(250, 136, 60, 0.1);
+  --text-color-80-perc-opacity: rgba(4, 20, 33, 0.8);
   --form-input-background: #f1f3f5;
 }
 
@@ -198,6 +199,28 @@ button {
   cursor: pointer;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color-80-perc-opacity);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  width: 90%;
+  margin-top: 60px;
+  padding: 30px;
+  border-radius: 16px;
+  max-height: calc(100% - 120px);
+  overflow-y: auto;
+}
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {

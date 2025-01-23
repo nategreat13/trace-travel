@@ -1,0 +1,94 @@
+<div (click)="onOverLayClick()" class="modal-overlay">
+  <div
+    (click)="$event.stopPropagation()"
+    class="special-container"
+    (wheel)="trapScroll($event)"
+  >
+    <div class="orange-section">
+      <div class="title">Upgrade to Premium+</div>
+      <div class="gradient-line"></div>
+      <div class="item-row">
+        <mat-icon class="check-icon">check</mat-icon>
+        <div class="item-text">Up to 75% Off</div>
+      </div>
+      <div class="item-row">
+        <mat-icon class="check-icon">check</mat-icon>
+        <div class="item-text">Business and First Class Deals</div>
+      </div>
+      <div class="item-row">
+        <mat-icon class="check-icon">check</mat-icon>
+        <div class="item-text">Book Support Team on Priority</div>
+      </div>
+      <div class="item-row">
+        <mat-icon class="check-icon">check</mat-icon>
+        <div class="item-text">
+          Priority Access to Updated Economy Class Deals
+        </div>
+      </div>
+    </div>
+    <div class="modal-content special-modal-content">
+      <div class="carousel-container">
+        <div class="carousel-wrapper" [style.transform]="transform">
+          <div class="carousel-item" *ngFor="let item of items">
+            <div class="carousel-card">
+              <div class="carousel-row">
+                <img class="card-image" src="{{ item.imageUrl }}" />
+                <div class="carousel-inner">
+                  <div class="destination">{{ item.destination }}</div>
+                  <div class="subtitle">{{ item.subtitle }}</div>
+                  <div class="testimonial-section testimonial-desktop">
+                    <div class="quote">"{{ item.quote }}"</div>
+                    <div class="testimonial-wrapper">
+                      <img
+                        class="testimonial-image"
+                        src="{{ item.testimonialImageUrl }}"
+                      />
+                      <div class="testimonial-name">
+                        {{ item.tesimonialName }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="price-section">
+                    <div class="price-original">
+                      {{ item.normalPriceString }}
+                    </div>
+                    <div class="price-new-section">
+                      <div class="price-new">{{ item.dealPriceString }}</div>
+                      <div class="round-trip-text">Round Trip</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-section testimonial-mobile">
+                <div class="quote">"{{ item.quote }}"</div>
+                <div class="testimonial-wrapper">
+                  <img
+                    class="testimonial-image"
+                    src="{{ item.testimonialImageUrl }}"
+                  />
+                  <div class="testimonial-name">
+                    {{ item.tesimonialName }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-marker-row">
+        <div
+          class="carousel-marker"
+          [class.carousel-marker-active]="currentIndex() === 0"
+        ></div>
+        <div
+          class="carousel-marker"
+          [class.carousel-marker-active]="currentIndex() === 1"
+        ></div>
+        <div
+          class="carousel-marker"
+          [class.carousel-marker-active]="currentIndex() === 2"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

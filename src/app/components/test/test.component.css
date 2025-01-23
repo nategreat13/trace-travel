@@ -1,0 +1,19 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%; /* Set your desired width */
+  height: 200px; /* Set your desired height */
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* Adjust based on the number of items */
+}
+
+.carousel-item {
+  width: 100%;
+  text-align: center;
+  line-height: 200px; /* Match the height of the container */
+  background-color: lightblue;
+}
