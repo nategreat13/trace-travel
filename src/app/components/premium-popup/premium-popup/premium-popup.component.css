@@ -78,7 +78,7 @@
 .carousel-inner {
   display: flex;
   flex-direction: column;
-  margin: 8px 0px 8px 30px;
+  margin: 0px 0px 8px 30px;
   gap: 16px;
 }
 
@@ -196,9 +196,25 @@
 }
 
 @media (max-width: 768px) {
+  .special-container {
+    max-height: calc(100% - 90px);
+    margin-top: 30px;
+  }
+
+  .special-modal-content {
+    padding-top: 200px;
+  }
   .orange-section {
     margin: 0px 30px -180px 30px;
     padding: 15px 30px;
+  }
+
+  .gradient-line {
+    margin-top: 12px;
+  }
+
+  .item-row {
+    margin-top: 8px;
   }
 
   .title {
@@ -261,7 +277,7 @@
   }
 
   .carousel-inner {
-    margin-left: 8px;
+    margin: 0px 0px 0px 8px;
   }
 
   .testimonial-desktop {
@@ -271,6 +287,11 @@
   .testimonial-mobile {
     display: flex;
     margin-top: 16px;
+  }
+
+  .carousel-item {
+    width: 100%;
+    padding: 16px 0px 0px 0px;
   }
 }
 
