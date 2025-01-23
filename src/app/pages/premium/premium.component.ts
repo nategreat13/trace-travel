@@ -6,18 +6,31 @@ import { catchError, of, single } from 'rxjs';
 import { DealCardComponent } from '../../components/deal-card/deal-card.component';
 import { DealGridComponent } from '../../components/deal-grid/deal-grid.component';
 import { SelectInputComponent } from '../../components/select-input/select-input.component';
+import { AuthService } from '../../services/auth/auth.service';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-premium',
-  imports: [NavbarComponent, DealGridComponent, SelectInputComponent],
+  imports: [NavbarComponent],
   templateUrl: './premium.component.html',
   styleUrl: './premium.component.css',
 })
 export class PremiumComponent {
   dealsService = inject(DealsService);
+  authService = inject(AuthService);
+  navigationService = inject(NavigationService);
   deals = signal<Array<Deal>>([]);
   origin = signal('SLC');
   isLoading = signal(false);
+
+  async logout() {
+    try {
+      await this.authService.logout();
+      this.navigationService.goToLogin();
+    } catch (e) {
+      // TODO
+    }
+  }
 
   getDealsFromOrigin(origin: string) {
     if (!origin) {

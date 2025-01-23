@@ -21,3 +21,7 @@
 .dont-have-account-button {
   cursor: pointer;
 }
+
+.margin-top {
+  margin-top: 16px;
+}

@@ -78,6 +78,12 @@
           >
             Log In
           </button>
+          @if (loginError()) {
+
+          <small class="form-error margin-top">
+            {{ loginError() }}
+          </small>
+          }
           <div class="dont-have-account-row">
             <div class="dont-have-account-question">Don't have an account?</div>
             <a

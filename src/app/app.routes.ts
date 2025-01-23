@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
 
 export const routes: Routes = [
   {
@@ -7,6 +9,7 @@ export const routes: Routes = [
     loadComponent() {
       return import('./pages/home/home.component').then((m) => m.HomeComponent);
     },
+    canActivate: [AuthGuard],
   },
   {
     path: 'premium',
@@ -15,12 +18,14 @@ export const routes: Routes = [
         (m) => m.PremiumComponent
       );
     },
+    canActivate: [AuthGuard],
   },
   {
     path: 'faqs',
     loadComponent() {
       return import('./pages/faqs/faqs.component').then((m) => m.FaqsComponent);
     },
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -29,5 +34,15 @@ export const routes: Routes = [
         (m) => m.LoginComponent
       );
     },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'your-deals',
+    loadComponent() {
+      return import('./pages/your-deals/your-deals.component').then(
+        (m) => m.YourDealsComponent
+      );
+    },
+    canActivate: [AuthenticatedGuard],
   },
 ];
