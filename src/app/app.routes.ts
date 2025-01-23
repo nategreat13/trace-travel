@@ -45,4 +45,13 @@ export const routes: Routes = [
     },
     canActivate: [AuthenticatedGuard],
   },
+  {
+    path: 'get-started',
+    loadComponent() {
+      return import('./pages/get-started/get-started.component').then(
+        (m) => m.GetStartedComponent
+      );
+    },
+    canActivate: [AuthGuard],
+  },
 ];

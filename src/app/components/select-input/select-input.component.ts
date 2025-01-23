@@ -16,15 +16,14 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
 })
 export class SelectInputComponent {
-  @Input() selectedValue: string = ''; // Input from parent
+  @Input() selectedValue: string = '';
   @Input() placeholder: string = 'Select an option...';
   @Input() options: { value: string; label: string }[] = [];
 
-  @Output() alert = new EventEmitter<string>();
+  @Output() onValueSelected = new EventEmitter<string>();
 
   onSelect(event: Event) {
     const newVal = (event.target as HTMLSelectElement).value;
-    this.selectedValue = newVal;
-    this.alert.emit(newVal);
+    this.onValueSelected.emit(newVal);
   }
 }

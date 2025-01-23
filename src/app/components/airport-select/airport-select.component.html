@@ -1,0 +1,6 @@
+<app-select-input
+  [options]="options()"
+  [placeholder]="'Select an airport...'"
+  (onValueSelected)="onSelect($event)"
+  [selectedValue]="selectedValue()"
+></app-select-input>

@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "embarckstravel"
-  }
+  },
+  "targets": {
+    "embarckstravel": {
+      "hosting": {
+        "trace-travel": [
+          "trace-travel"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

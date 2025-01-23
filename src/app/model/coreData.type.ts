@@ -1,6 +1,6 @@
 import { UserCredential } from '@angular/fire/auth';
 
-type DripData = {
+export type DripData = {
   firstName?: string;
   lastName?: string;
   paymentMethodBrand?: string;

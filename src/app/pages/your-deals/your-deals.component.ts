@@ -10,10 +10,11 @@ import { AuthService } from '../../services/auth/auth.service';
 import { NavigationService } from '../../services/navigation.service';
 import { CoreDataService } from '../../services/user/coreData.service';
 import { Airports } from '../../constants/airports.constants';
+import { AirportSelectComponent } from '../../components/airport-select/airport-select.component';
 
 @Component({
   selector: 'app-your-deals',
-  imports: [DealGridComponent, SelectInputComponent],
+  imports: [DealGridComponent, AirportSelectComponent],
   templateUrl: './your-deals.component.html',
   styleUrl: './your-deals.component.css',
 })

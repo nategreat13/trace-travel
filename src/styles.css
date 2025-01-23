@@ -189,6 +189,15 @@ button {
   align-items: center;
 }
 
+.orange-button {
+  background-color: var(--orange);
+}
+
+.blue-text-button {
+  color: var(--blue);
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {

@@ -1,11 +1,9 @@
 <div (click)="logout()" class="blue-button">Log Out</div>
 <div style="padding: 16px">
-  <app-select-input
-    [options]="options()"
-    [placeholder]="'Select an airport...'"
-    (alert)="updateAirport($event)"
-    [selectedValue]="selectedAirport()"
-  ></app-select-input>
+  <app-airport-select
+    (onAirportSelected)="updateAirport($event)"
+    [selectedAirport]="selectedAirport()"
+  />
 </div>
 @if (isLoading()) {
 <div class="loader-container">

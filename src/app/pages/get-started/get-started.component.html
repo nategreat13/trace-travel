@@ -1,0 +1,96 @@
+<div class="login-signup-page-body">
+  <div class="login-signup-page-inner-container get-started-inner-container">
+    <img class="get-started-image" src="/assets/girl-circle.png" />
+    <div class="login-signup-page-blue-header blue-text">
+      Let's Get Started!
+    </div>
+    <div class="login-signup-page-subtitle">
+      Where do you want us to send your deals?
+    </div>
+    <div class="login-signup-page-form">
+      <form [formGroup]="getStartedForm" (ngSubmit)="onSubmit()">
+        <div class="form-inner">
+          <div class="input-container">
+            <label class="form-label" for="email">Email</label>
+            <input
+              class="form-field"
+              id="email"
+              formControlName="email"
+              type="email"
+            />
+            <div
+              *ngIf="
+                getStartedForm.get('email')?.invalid &&
+                getStartedForm.get('email')?.touched
+              "
+            >
+              <small
+                class="form-error"
+                *ngIf="getStartedForm.get('email')?.errors?.['required']"
+                >Email is required.</small
+              >
+              <small
+                class="form-error"
+                *ngIf="getStartedForm.get('email')?.errors?.['email']"
+                >Invalid email format.</small
+              >
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label class="form-label" for="airport"
+              >Select Your Home Airport</label
+            ><select formControlName="airport" class="select" id="dropdown">
+              <option value="">Select an airport...</option>
+              <option *ngFor="let option of options()" [value]="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+
+            <div
+              *ngIf="
+                getStartedForm.get('airport')?.invalid &&
+                getStartedForm.get('airport')?.touched
+              "
+            >
+              <small
+                class="form-error"
+                *ngIf="getStartedForm.get('airport')?.errors?.['required']"
+                >Airport is required.</small
+              >
+            </div>
+          </div>
+
+          <button
+            class="blue-button orange-button get-started-button"
+            type="submit"
+            [disabled]="getStartedForm.invalid || isLoading()"
+          >
+            Continue To Deals
+          </button>
+
+          @if (getStartedError()) {
+
+          <small class="form-error margin-top">
+            {{ getStartedError() }}
+          </small>
+          }
+        </div>
+      </form>
+    </div>
+    <div class="bottom-section">
+      <img class="login-signup-page-logo" src="/assets/logo-black-text.png" />
+      <div class="center-text">
+        I agree to to the
+        <a routerLink="/terms-and-conditions" class="blue-text-button"
+          >Terms and Conditions</a
+        >
+        &
+        <a routerLink="/privacy-policy" class="blue-text-button"
+          >Privacy Policy</a
+        >
+        by signing up
+      </div>
+    </div>
+  </div>
+</div>

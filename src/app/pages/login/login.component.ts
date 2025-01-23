@@ -9,10 +9,9 @@ import {
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
-import { HttpClient } from '@angular/common/http';
 import { CoreDataService } from '../../services/user/coreData.service';
-import { firstValueFrom } from 'rxjs';
 import { NavigationService } from '../../services/navigation.service';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +29,7 @@ export class LoginComponent {
   isLoggingIn = signal(false);
   loginError = signal('');
   authService = inject(AuthService);
-  http = inject(HttpClient);
+  apiService = inject(ApiService);
   coreDataService = inject(CoreDataService);
   navigationService = inject(NavigationService);
 
@@ -50,22 +49,20 @@ export class LoginComponent {
       const loginResult = await this.authService.login(email, password);
       if (loginResult.status === 'success') {
         this.coreDataService.setUserCredential(loginResult.userCredential);
-        const url = `https://us-central1-embarckstravel.cloudfunctions.net/api/get-drip-data?email=${encodeURIComponent(
-          email
-        )}`;
-        try {
-          const dripData = await firstValueFrom(this.http.get<any>(url));
-          if (dripData) {
-            const tags = dripData.tags;
-            const customData = dripData.customData;
-            this.coreDataService.setDripData(customData, tags);
-            console.log(this.coreDataService.get(), 'mkDIzVuRj0');
+        const dripDataRes = await this.apiService.getDripData(email);
+        console.log(dripDataRes, '1JkNovkBn0');
+        switch (dripDataRes.status) {
+          case 'success':
+            this.coreDataService.setDripData(dripDataRes.dripData);
             this.navigationService.goToYourDeals();
-          } else {
-            // TODO Handle no drip data
-          }
-        } catch (e) {
-          // TODO Handle no drip data
+            break;
+          case 'error':
+            this.coreDataService.setDripData(null);
+            return;
+            break;
+          case 'notFound':
+            this.coreDataService.setDripData(null);
+            this.navigationService.goToYourDeals();
         }
       } else {
         this.loginError.set(loginResult.errorMessage);
