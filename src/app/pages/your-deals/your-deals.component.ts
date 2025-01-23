@@ -9,6 +9,7 @@ import { SelectInputComponent } from '../../components/select-input/select-input
 import { AuthService } from '../../services/auth/auth.service';
 import { NavigationService } from '../../services/navigation.service';
 import { CoreDataService } from '../../services/user/coreData.service';
+import { Airports } from '../../constants/airports.constants';
 
 @Component({
   selector: 'app-your-deals',
@@ -24,12 +25,18 @@ export class YourDealsComponent {
   deals = signal<Array<Deal>>([]);
   isLoading = signal(false);
   selectedAirport = signal(this.coreDataService.get().dripData?.airport ?? '');
+  options = signal(
+    Airports.map((airport) => {
+      return {
+        label: `${airport.city} (${airport.code})`,
+        value: airport.code,
+      };
+    })
+  );
 
   constructor() {
-    console.log(this.coreDataService.get().dripData?.airport, 'nu1YrcmKU3');
     effect(() => {
       const currentAirport = this.selectedAirport();
-      console.log('Selected airport changed:', currentAirport);
       this.getDealsFromOrigin(currentAirport ?? '');
     });
   }
@@ -38,7 +45,7 @@ export class YourDealsComponent {
     try {
       await this.authService.logout();
       this.coreDataService.clear();
-      this.navigationService.goToLogin();
+      this.navigationService.goToHome();
     } catch (e) {
       // TODO
     }

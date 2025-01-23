@@ -11,6 +11,10 @@ export class NavigationService {
     this.router.navigate(['/login']);
   }
 
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
   goToYourDeals() {
     this.router.navigate(['/your-deals']);
   }

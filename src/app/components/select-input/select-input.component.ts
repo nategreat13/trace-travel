@@ -1,31 +1,30 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
   Input,
   Output,
-  input,
-  output,
-  signal,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-select-input',
-  imports: [],
   templateUrl: './select-input.component.html',
-  styleUrl: './select-input.component.css',
+  styleUrls: ['./select-input.component.css'],
+  imports: [CommonModule, FormsModule],
 })
 export class SelectInputComponent {
-  selectedValue = input.required<string>();
-  placeholder = input('Select an option...');
-  options = input.required<{ value: string; label: string }[]>();
+  @Input() selectedValue: string = ''; // Input from parent
+  @Input() placeholder: string = 'Select an option...';
+  @Input() options: { value: string; label: string }[] = [];
 
-  constructor() {
-    console.log(this.selectedValue(), '4tKqlpFUcq');
-  }
+  @Output() alert = new EventEmitter<string>();
 
-  @Output('alert') alert = new EventEmitter<string>();
   onSelect(event: Event) {
     const newVal = (event.target as HTMLSelectElement).value;
+    this.selectedValue = newVal;
     this.alert.emit(newVal);
   }
 }

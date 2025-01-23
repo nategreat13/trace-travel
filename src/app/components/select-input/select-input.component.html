@@ -1,11 +1,11 @@
 <select
   class="select"
+  [(ngModel)]="selectedValue"
   (change)="onSelect($event)"
   id="dropdown"
-  [value]="selectedValue()"
 >
-  <option value="" label="{{ placeholder() }}"></option>
-  @for (option of options(); track $index) {
-  <option [value]="option.value" [label]="option.label"></option>
-  }
+  <option value="">{{ placeholder }}</option>
+  <option *ngFor="let option of options" [value]="option.value">
+    {{ option.label }}
+  </option>
 </select>
