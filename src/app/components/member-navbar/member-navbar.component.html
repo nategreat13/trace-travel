@@ -1,0 +1,18 @@
+<div class="member-nav-bar-container">
+  <a class="logo-link">
+    <img class="logo-img" src="/assets/logo-white-text.png" />
+  </a>
+  <div class="user-info-section">
+    <div class="user-name">Nathan Gygi</div>
+    <div class="user-member-type">Standard Member</div>
+  </div>
+  <a
+    [routerLink]="tab.routerLink"
+    routerLinkActive="active-tab"
+    class="tab"
+    *ngFor="let tab of tabs()"
+  >
+    <img class="tab-image" [src]="isActive(tab) ? tab.blueUrl : tab.whiteUrl" />
+    <div class="tab-text">{{ tab.text }}</div>
+  </a>
+</div>

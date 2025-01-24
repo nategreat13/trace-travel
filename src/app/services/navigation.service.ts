@@ -16,6 +16,6 @@ export class NavigationService {
   }
 
   goToYourDeals() {
-    this.router.navigate(['/your-deals']);
+    this.router.navigate(['/member/your-deals']);
   }
 }

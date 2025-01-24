@@ -1,0 +1,70 @@
+.member-nav-bar-container {
+  background-color: var(--member-nav-bar-bg);
+  flex-direction: column;
+  min-width: 250px;
+  height: 100%;
+  display: flex;
+}
+
+.logo-img {
+  width: 120px;
+}
+
+.logo-link {
+  margin: 30px 30px 30px 18px;
+}
+
+.user-info-section {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0px 15px 30px 18px;
+}
+
+.user-name {
+  font-size: 20px;
+}
+
+.tab {
+  border: 3px solid var(--member-nav-bar-bg);
+  color: var(--white);
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+}
+
+.tab:hover {
+  background-color: var(--blue);
+  opacity: 1;
+}
+
+.active-tab {
+  border-left: 3px solid var(--light-blue);
+  background-color: var(--member-nav-bar-selected-bg);
+  color: var(--light-blue);
+}
+
+.active-tab:hover {
+  background-color: var(--member-nav-bar-selected-bg);
+  opacity: 0.5;
+}
+
+.tab-image {
+  width: 18px;
+  height: 18px;
+  margin-top: 21px;
+  margin-left: 18px;
+  position: absolute;
+  inset: 0% auto 0% 0%;
+}
+
+.tab-text {
+  margin-left: 54px;
+  font-size: 18px;
+  line-height: 18px;
+  text-decoration: none;
+}

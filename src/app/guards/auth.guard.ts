@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
       map((user) => {
         if (user) {
           // Redirect to the desired route if the user is logged in
-          return this.router.createUrlTree(['/your-deals']);
+          return this.router.createUrlTree(['/member/your-deals']);
         }
         return true; // Allow access if not logged in
       })

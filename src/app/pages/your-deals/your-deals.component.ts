@@ -11,10 +11,11 @@ import { NavigationService } from '../../services/navigation.service';
 import { CoreDataService } from '../../services/user/coreData.service';
 import { Airports } from '../../constants/airports.constants';
 import { AirportSelectComponent } from '../../components/airport-select/airport-select.component';
+import { MemberNavbarComponent } from '../../components/member-navbar/member-navbar.component';
 
 @Component({
   selector: 'app-your-deals',
-  imports: [DealGridComponent, AirportSelectComponent],
+  imports: [DealGridComponent, AirportSelectComponent, MemberNavbarComponent],
   templateUrl: './your-deals.component.html',
   styleUrl: './your-deals.component.css',
 })
@@ -25,7 +26,8 @@ export class YourDealsComponent {
   coreDataService = inject(CoreDataService);
   deals = signal<Array<Deal>>([]);
   isLoading = signal(false);
-  selectedAirport = signal(this.coreDataService.get().dripData?.airport ?? '');
+  // selectedAirport = signal(this.coreDataService.get().dripData?.airport ?? '');
+  selectedAirport = signal('');
   options = signal(
     Airports.map((airport) => {
       return {

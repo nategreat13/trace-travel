@@ -8,10 +8,11 @@ import { DealGridComponent } from '../../components/deal-grid/deal-grid.componen
 import { SelectInputComponent } from '../../components/select-input/select-input.component';
 import { AuthService } from '../../services/auth/auth.service';
 import { NavigationService } from '../../services/navigation.service';
+import { MemberNavbarComponent } from '../../components/member-navbar/member-navbar.component';
 
 @Component({
   selector: 'app-premium',
-  imports: [NavbarComponent],
+  imports: [],
   templateUrl: './premium.component.html',
   styleUrl: './premium.component.css',
 })

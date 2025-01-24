@@ -1,15 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --blue: #3d9be9;
-  --orange: #fa883c;
-  --gold: #ffd464;
   --background-color: #f5fafe;
-  --text-color: #041421;
   --orange-10-perc-opacity: rgba(250, 136, 60, 0.1);
   --text-color-80-perc-opacity: rgba(4, 20, 33, 0.8);
-  --form-input-background: #f1f3f5;
+  --background: #f5fafe;
+  --text-color: #041421;
+  --white: white;
+  --orange: #fa883c;
+  --light-blue: #6cb6ff;
+  --darker-blue: #255b89;
+  --light-orange: #fee6d6;
+  --blue: #3d9be9;
+  --darker-orange: #935023;
+  --white-button-pressed: #bababa;
+  --premium-purple: #844db3;
+  --purple: #9c37b9;
+  --red: red;
+  --red-button-pressed: #b90202;
+  --gold: #ffd464;
+  --gold-orange: #f59b15;
   --light-gray: #c4c4c4;
+  --very-light-blue: #ecf5fd;
+  --success-story-1: #d94832;
+  --success-story-2: #3d9be9;
+  --success-story-3: #cf4768;
+  --success-story-4: #1e7b6c;
+  --success-story-1-background: #fbedeb;
+  --success-story-2-background: #ecf5fd;
+  --success-story-3-background: #faedf0;
+  --success-story-4-background: #e9f2f0;
+  --form-input-background: #f1f3f5;
+  --member-nav-bar-bg: #03233e;
+  --member-nav-bar-selected-bg: #032947;
+  --member-nav-bar-off-text-color: #697f91;
+  --stripe-background: #f4f6f8;
+  --radio-not-selected-bg: #e0e3e6;
+  --radio-button-grey: #998a80;
+  --premium-blue: #4267b2;
+  --wt-line-color: #e0e0e0;
+  --green: #35a11d;
+  --gray: #cad5dd;
+  --light-gray-bg: #f6f7f9;
+  --dark-green: #02a346;
+  --white-2: white;
+  --black: black;
+  --premium-left-gradient: #dd9853;
+  --premium-right-gradient: #fa8e3c;
 }
 
 .body {
@@ -223,6 +260,14 @@ button {
   max-height: calc(100% - 120px);
   overflow-y: auto;
 }
+
+.member-page-body {
+  display: flex;
+}
+
+.member-page-inner {
+}
+
 @media (max-width: 992px) {
 }
 @media (max-width: 768px) {

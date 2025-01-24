@@ -37,7 +37,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'your-deals',
+    path: 'member/your-deals',
     loadComponent() {
       return import('./pages/your-deals/your-deals.component').then(
         (m) => m.YourDealsComponent
