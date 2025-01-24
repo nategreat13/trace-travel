@@ -8,10 +8,11 @@ import {
 import { MatIcon } from '@angular/material/icon';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-premium-popup',
-  imports: [MatIcon, CommonModule],
+  imports: [MatIcon, CommonModule, RouterLink],
   templateUrl: './premium-popup.component.html',
   styleUrl: './premium-popup.component.css',
   animations: [
@@ -34,6 +35,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PremiumPopupComponent implements OnDestroy {
   currentIndex = signal(0);
+  currentPage = signal(0);
   private intervalId: any;
   items: {
     imageUrl: string;
@@ -100,6 +102,13 @@ export class PremiumPopupComponent implements OnDestroy {
     if (atTop || atBottom) {
       // Prevent the scroll event from propagating beyond the modal
       event.preventDefault();
+    }
+  }
+
+  onButtonClick() {
+    if (this.currentPage() === 1) {
+    } else {
+      this.currentPage.set(1);
     }
   }
 

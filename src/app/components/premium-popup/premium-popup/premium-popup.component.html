@@ -27,67 +27,100 @@
       </div>
     </div>
     <div class="modal-content special-modal-content">
-      <div class="carousel-container">
-        <div class="carousel-wrapper" [style.transform]="transform">
-          <div class="carousel-item" *ngFor="let item of items">
-            <div class="carousel-card">
-              <div class="carousel-row">
-                <img class="card-image" src="{{ item.imageUrl }}" />
-                <div class="carousel-inner">
-                  <div class="destination">{{ item.destination }}</div>
-                  <div class="subtitle">{{ item.subtitle }}</div>
-                  <div class="testimonial-section testimonial-desktop">
-                    <div class="quote">"{{ item.quote }}"</div>
-                    <div class="testimonial-wrapper">
-                      <img
-                        class="testimonial-image"
-                        src="{{ item.testimonialImageUrl }}"
-                      />
-                      <div class="testimonial-name">
-                        {{ item.tesimonialName }}
+      <div class="page-1-container" *ngIf="currentPage() === 0">
+        <div class="carousel-container">
+          <div class="carousel-wrapper" [style.transform]="transform">
+            <div class="carousel-item" *ngFor="let item of items">
+              <div class="carousel-card">
+                <div class="carousel-row">
+                  <img class="card-image" src="{{ item.imageUrl }}" />
+                  <div class="carousel-inner">
+                    <div class="destination">{{ item.destination }}</div>
+                    <div class="subtitle">{{ item.subtitle }}</div>
+                    <div class="testimonial-section testimonial-desktop">
+                      <div class="quote">"{{ item.quote }}"</div>
+                      <div class="testimonial-wrapper">
+                        <img
+                          class="testimonial-image"
+                          src="{{ item.testimonialImageUrl }}"
+                        />
+                        <div class="testimonial-name">
+                          {{ item.tesimonialName }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price-section">
+                      <div class="price-original">
+                        {{ item.normalPriceString }}
+                      </div>
+                      <div class="price-new-section">
+                        <div class="price-new">{{ item.dealPriceString }}</div>
+                        <div class="round-trip-text">Round Trip</div>
                       </div>
                     </div>
                   </div>
-                  <div class="price-section">
-                    <div class="price-original">
-                      {{ item.normalPriceString }}
-                    </div>
-                    <div class="price-new-section">
-                      <div class="price-new">{{ item.dealPriceString }}</div>
-                      <div class="round-trip-text">Round Trip</div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div class="testimonial-section testimonial-mobile">
-                <div class="quote">"{{ item.quote }}"</div>
-                <div class="testimonial-wrapper">
-                  <img
-                    class="testimonial-image"
-                    src="{{ item.testimonialImageUrl }}"
-                  />
-                  <div class="testimonial-name">
-                    {{ item.tesimonialName }}
+                <div class="testimonial-section testimonial-mobile">
+                  <div class="quote">"{{ item.quote }}"</div>
+                  <div class="testimonial-wrapper">
+                    <img
+                      class="testimonial-image"
+                      src="{{ item.testimonialImageUrl }}"
+                    />
+                    <div class="testimonial-name">
+                      {{ item.tesimonialName }}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="carousel-marker-row">
+          <div
+            class="carousel-marker"
+            [class.carousel-marker-active]="currentIndex() === 0"
+          ></div>
+          <div
+            class="carousel-marker"
+            [class.carousel-marker-active]="currentIndex() === 1"
+          ></div>
+          <div
+            class="carousel-marker"
+            [class.carousel-marker-active]="currentIndex() === 2"
+          ></div>
+        </div>
       </div>
-      <div class="carousel-marker-row">
-        <div
-          class="carousel-marker"
-          [class.carousel-marker-active]="currentIndex() === 0"
-        ></div>
-        <div
-          class="carousel-marker"
-          [class.carousel-marker-active]="currentIndex() === 1"
-        ></div>
-        <div
-          class="carousel-marker"
-          [class.carousel-marker-active]="currentIndex() === 2"
-        ></div>
+      <div class="payment-details" *ngIf="currentPage() === 1">
+        <div>
+          <span class="monthly-price-text"> $7 </span>
+          <span class="month-text">/month</span>
+        </div>
+        <div class="billed-anually">Billed annually at $84</div>
+        <div class="cancel-text">Cancel Anytime</div>
+        <div class="divider"></div>
+        <div class="credit-card">VISA **** **** **** 4345</div>
+        <div class="expiration">Expires 9/2026</div>
+        <a class="change-button">Change</a>
+      </div>
+      <div class="button-wrapper">
+        <a
+          (click)="onButtonClick()"
+          class="blue-button orange-button next-step-button"
+          ><img class="crown" src="/assets/white-crown.png" />
+          <div>{{ currentPage() === 0 ? "Next Step" : "Confirm Upgrade" }}</div>
+        </a>
+        <div *ngIf="currentPage() === 1" class="terms-text">
+          By signing up, you authorize Trace Travel to automatically charge you
+          $119 per year every year until you cancel.
+          <a routerLink="/terms-and-conditions" class="terms-button"
+            >Terms and Conditions</a
+          >
+          &
+          <a routerLink="/privacy-policy" class="terms-button"
+            >Privacy Policy</a
+          >
+        </div>
       </div>
     </div>
   </div>

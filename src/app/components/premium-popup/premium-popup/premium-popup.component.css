@@ -35,15 +35,18 @@
 
 .special-container {
   width: 90%;
-  max-height: calc(100% - 120px);
+  max-height: calc(100% - 60px);
   overflow-y: auto;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .special-modal-content {
   margin-top: -0px;
   width: auto;
-  padding-top: 240px;
+  padding-top: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gradient-line {
@@ -150,6 +153,10 @@
   display: flex;
 }
 
+.page-1-container {
+  width: 100%;
+}
+
 .carousel-container {
   overflow: hidden;
   width: 100%; /* Set your desired width */
@@ -195,15 +202,108 @@
   display: none;
 }
 
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 16px;
+  gap: 8px;
+  align-items: center;
+}
+
+.next-step-button {
+  background-image: linear-gradient(
+    90deg,
+    var(--gold),
+    var(--orange) 100%,
+    white
+  );
+  width: 300px;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.crown {
+  height: 16px;
+}
+
+.terms-text {
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.7;
+  text-align: center;
+  max-width: 500px;
+  margin-top: 12px;
+}
+
+.terms-button {
+  color: orange;
+  cursor: pointer;
+}
+
+.payment-details {
+  border: 1px solid var(--light-gray);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  width: fit-content;
+  align-items: center;
+  gap: 4px;
+}
+
+.monthly-price-text {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  margin-right: -8px;
+}
+.month-text {
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 300;
+}
+.billed-anually {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.cancel-text {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+}
+.divider {
+  border-top: 1px solid var(--light-gray);
+  border-left-style: solid;
+  width: 200px;
+  margin-top: 12px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.credit-card {
+  margin-top: 12px;
+}
+.change-button {
+  color: var(--orange);
+  cursor: pointer;
+  margin-top: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 @media (max-width: 768px) {
   .special-container {
     max-height: calc(100% - 90px);
     margin-top: 30px;
   }
 
-  .special-modal-content {
-    padding-top: 200px;
-  }
   .orange-section {
     margin: 0px 30px -180px 30px;
     padding: 15px 30px;
@@ -292,6 +392,52 @@
   .carousel-item {
     width: 100%;
     padding: 16px 0px 0px 0px;
+  }
+
+  .payment-details {
+    padding: 12px 24px;
+  }
+
+  .monthly-price-text {
+    font-size: 32px;
+    line-height: 32px;
+    margin-right: -4px;
+  }
+  .month-text {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .billed-anually {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .cancel-text {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .divider {
+    border-top: 1px solid var(--light-gray);
+    border-left-style: solid;
+    width: 200px;
+    margin-top: 12px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  .credit-card {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .expiration {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .change-button {
+    color: var(--orange);
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 }
 
