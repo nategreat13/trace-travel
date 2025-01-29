@@ -36,4 +36,26 @@
     align-items: center;
     gap: 60px;
   }
+
+  .title {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    line-height: 22px;
+  }
 }

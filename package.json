@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "firebase deploy",
-    "build-and-deploy": "ng build && firebase deploy --only hosting:trace-travel && say done"
+    "build-and-deploy": "ng build --configuration=production && firebase deploy --only hosting:trace-travel && say done"
   },
   "private": true,
   "dependencies": {

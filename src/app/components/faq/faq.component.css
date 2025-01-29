@@ -1,9 +1,12 @@
 .faq {
+  width: 80%;
+}
+
+.faq-column {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 80%;
-  justify-self: center;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
