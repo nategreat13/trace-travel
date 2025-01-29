@@ -69,8 +69,14 @@
     </div>
   </div>
   <app-get-started-blue-button text="30 day free trial" />
-  <app-premium-popup
-    *ngIf="showPremiumPopup()"
-    (onClose)="onClosePremiumPopup()"
-  />
 </div>
+<div routerLink="/get-started" class="destination-row">
+  <img class="destination-image" src="/assets/hawaii.png" />
+  <img class="destination-image" src="/assets/rome.png" />
+  <img class="destination-image" src="/assets/cancun.png" />
+</div>
+<app-how-it-works />
+<app-premium-popup
+  *ngIf="showPremiumPopup()"
+  (onClose)="onClosePremiumPopup()"
+/>

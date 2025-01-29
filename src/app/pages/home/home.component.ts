@@ -5,6 +5,8 @@ import { OrangeIconWithOrangeBackgroundComponent } from '../../components/orange
 import { PremiumPopupComponent } from '../../components/premium-popup/premium-popup/premium-popup.component';
 import { TestComponent } from '../../components/test/test.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HowItWorksComponent } from '../../components/how-it-works/how-it-works.component';
 
 @Component({
   selector: 'app-home',
@@ -14,13 +16,14 @@ import { CommonModule } from '@angular/common';
     OrangeIconWithOrangeBackgroundComponent,
     PremiumPopupComponent,
     CommonModule,
+    RouterModule,
+    HowItWorksComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
   showPremiumPopup = signal(false);
-  constructor() {}
 
   clickShowPremiumPopup() {
     this.showPremiumPopup.set(true);
