@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { CoreData, DripData } from '../../model/coreData.type';
 import { UserCredential } from '@angular/fire/auth';
 import _ from 'lodash';
-import { Airports } from '../../constants/airports.constants';
+
+let DEFAULT_TRIAL_DAYS = 7;
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,12 @@ export class CoreDataService {
 
   private loadCoreData(): CoreData {
     const storedData = localStorage.getItem(this.STORAGE_KEY);
-    return storedData ? JSON.parse(storedData) : {}; // Load data or default to an empty object
+    const coreData: CoreData = storedData
+      ? JSON.parse(storedData)
+      : {
+          trialDays: DEFAULT_TRIAL_DAYS,
+        };
+    return coreData;
   }
 
   private saveCoreData() {
@@ -22,7 +28,7 @@ export class CoreDataService {
 
   set(coreData: CoreData) {
     this.coreData = coreData;
-    this.saveCoreData(); // Persist changes
+    this.saveCoreData();
   }
 
   get() {
@@ -30,13 +36,15 @@ export class CoreDataService {
   }
 
   clear() {
-    this.coreData = {};
-    localStorage.removeItem(this.STORAGE_KEY); // Clear persisted data
+    this.coreData = {
+      trialDays: DEFAULT_TRIAL_DAYS,
+    };
+    localStorage.removeItem(this.STORAGE_KEY);
   }
 
   setUserCredential(userCredential: UserCredential) {
     this.coreData.userCredential = userCredential;
-    this.saveCoreData(); // Persist changes
+    this.saveCoreData();
   }
 
   setDripData(dripData: DripData | null) {

@@ -1,0 +1,11 @@
+<!-- <script src="https://player.vimeo.com/api/player.js"></script> -->
+
+<div class="video-testimonial-container">
+  <div class="title">Save Thousands</div>
+  <div class="subtitle">for only $5 per month</div>
+  <div class="video-testimonials">
+    <div *ngFor="let testimonial of testimonials()">
+      <app-video-testimonial [testimonial]="testimonial" />
+    </div>
+  </div>
+</div>

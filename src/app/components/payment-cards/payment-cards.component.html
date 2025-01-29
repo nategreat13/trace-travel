@@ -1,0 +1,47 @@
+<div class="payment-card-outer-container">
+  <div class="payment-card-inner-container">
+    <div class="title">Unlimited Deals a Click Away</div>
+    <div class="subtitle">Try us out 7 Days for Free!</div>
+    <div class="payment-card-grid">
+      <div *ngFor="let card of cards()">
+        <div
+          class="payment-card"
+          [ngClass]="{
+            'orange-card': card.style === 'orange',
+            'blue-card': card.style === 'blue'
+          }"
+        >
+          <div
+            class="percent-off"
+            [ngClass]="{
+              'orange-percent-off': card.style === 'orange',
+              'blue-percent-off': card.style === 'blue'
+            }"
+          >
+            <span class="bold-percent"> {{ card.percent }}% </span>OFF
+          </div>
+          <div class="payment-card-inner">
+            <div class="card-title">{{ card.title }}</div>
+            <div class="card-subtitle">{{ card.subtitle }}</div>
+            <div class="price-row">
+              <div class="normal-price">${{ card.normalPriceUSD }}</div>
+              <div class="price">${{ card.priceUSD }}</div>
+              <div class="period">/month</div>
+            </div>
+            <a
+              routerLink="/get-started"
+              class="blue-button card-button"
+              [ngClass]="{
+                'orange-button': card.style === 'orange',
+                'white-button': card.style === 'blue'
+              }"
+              >Free Trial</a
+            >
+            <div class="cancel-anytime">Cancel Anytime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="payment-methods-image" src="/assets/payment-methods-row.webp" />
+  </div>
+</div>

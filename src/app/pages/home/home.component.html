@@ -15,7 +15,7 @@
         <span class="bold">save up to 90%</span></span
       >
     </div>
-    <app-get-started-blue-button text="30 day free trial" />
+    <app-get-started-blue-button />
   </div>
 </div>
 <div class="home-page-icon-row">
@@ -68,7 +68,7 @@
       </div>
     </div>
   </div>
-  <app-get-started-blue-button text="30 day free trial" />
+  <app-get-started-blue-button />
 </div>
 <div routerLink="/get-started" class="destination-row">
   <img class="destination-image" src="/assets/hawaii.png" />
@@ -76,6 +76,17 @@
   <img class="destination-image" src="/assets/cancun.png" />
 </div>
 <app-how-it-works />
+<app-video-testimonials />
+<app-payment-cards />
+<div routerLink="/get-started" class="destination-row">
+  <img class="destination-image" src="/assets/iceland.png" />
+  <img class="destination-image" src="/assets/tokyo.png" />
+  <img class="destination-image" src="/assets/south-africa.png" />
+</div>
+<div class="faq-container">
+  <app-faq [importantOnly]="true" />
+</div>
+<app-planning-travels />
 <app-premium-popup
   *ngIf="showPremiumPopup()"
   (onClose)="onClosePremiumPopup()"

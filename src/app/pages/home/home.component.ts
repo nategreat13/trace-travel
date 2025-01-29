@@ -7,6 +7,11 @@ import { TestComponent } from '../../components/test/test.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HowItWorksComponent } from '../../components/how-it-works/how-it-works.component';
+import { VideoTestimonialsComponent } from '../../components/video-testimonials/video-testimonials.component';
+import { PaymentCardsComponent } from '../../components/payment-cards/payment-cards.component';
+import { FaqsComponent } from '../faqs/faqs.component';
+import { FaqComponent } from '../../components/faq/faq.component';
+import { PlanningTravelsComponent } from '../../components/planning-travels/planning-travels.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +23,10 @@ import { HowItWorksComponent } from '../../components/how-it-works/how-it-works.
     CommonModule,
     RouterModule,
     HowItWorksComponent,
+    VideoTestimonialsComponent,
+    PaymentCardsComponent,
+    FaqComponent,
+    PlanningTravelsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

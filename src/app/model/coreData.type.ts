@@ -25,4 +25,5 @@ export type DripData = {
 export type CoreData = {
   userCredential?: UserCredential;
   dripData?: DripData;
+  trialDays: number;
 };

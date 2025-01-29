@@ -1,5 +1,5 @@
 <div class="faq">
-  @for (faq of FAQS(); track $index) {
+  @for (faq of filteredFAQS(); track $index) {
   <app-faq-card [title]="faq.title" [body]="faq.body" />
   }
 </div>

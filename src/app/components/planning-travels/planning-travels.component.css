@@ -1,0 +1,76 @@
+.planning-travels-container {
+  background-color: var(--white);
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+}
+
+.planning-travels-inner-container {
+  align-items: center;
+  width: 80%;
+  display: flex;
+}
+
+.planning-travels-image {
+  flex: 0 auto;
+  width: 40%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.planning-travels-right-section {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.planning-travels-title {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 34px;
+}
+.planning-travels-subtitle {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  line-height: 48px;
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .planning-travels-image {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .planning-travels-title {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .planning-travels-subtitle {
+    line-height: 24px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .planning-travels-inner-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .planning-travels-right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .planning-travels-title {
+    text-align: center;
+  }
+  .planning-travels-subtitle {
+    text-align: center;
+  }
+
+  .planning-travels-image {
+    width: 70%;
+  }
+}

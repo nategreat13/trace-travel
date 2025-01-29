@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { FaqCardComponent } from '../faq-card/faq-card.component';
 import { FAQS } from '../../constants/faqs.constants';
 
@@ -10,4 +10,11 @@ import { FAQS } from '../../constants/faqs.constants';
 })
 export class FaqComponent {
   FAQS = signal(FAQS);
+  importantOnly = input(false);
+
+  filteredFAQS = computed(() =>
+    this.importantOnly()
+      ? this.FAQS().filter((faq) => faq.important)
+      : this.FAQS()
+  );
 }

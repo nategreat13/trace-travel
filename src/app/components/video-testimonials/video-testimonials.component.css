@@ -1,0 +1,39 @@
+.video-testimonial-container {
+  background-image: url("/assets/blue-bg.png");
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 80px 30px;
+  align-items: center;
+}
+
+.title {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
+  color: var(--orange);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--background);
+  margin-top: 20px;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.video-testimonials {
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .video-testimonials {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+}

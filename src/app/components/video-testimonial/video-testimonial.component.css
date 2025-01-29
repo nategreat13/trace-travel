@@ -1,0 +1,37 @@
+.video-testimonial-card {
+  background-color: var(--white);
+  text-align: left;
+  border-radius: 16px;
+  flex-direction: column;
+  width: 316px;
+  padding: 8px 8px 26px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.testimonial-quote {
+  margin-top: 20px;
+  opacity: 0.9;
+  align-self: flex-start;
+}
+.testimonial-name {
+  margin-top: 20px;
+  opacity: 0.5;
+  align-self: flex-start;
+}
+.testimonial-saved-tag {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  font-weight: 500;
+  display: flex;
+  position: absolute;
+  bottom: -25px;
+  align-self: center;
+}
