@@ -12,6 +12,7 @@ import { PaymentCardsComponent } from '../../components/payment-cards/payment-ca
 import { FaqsComponent } from '../faqs/faqs.component';
 import { FaqComponent } from '../../components/faq/faq.component';
 import { PlanningTravelsComponent } from '../../components/planning-travels/planning-travels.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,7 @@ import { PlanningTravelsComponent } from '../../components/planning-travels/plan
     PaymentCardsComponent,
     FaqComponent,
     PlanningTravelsComponent,
+    FooterComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

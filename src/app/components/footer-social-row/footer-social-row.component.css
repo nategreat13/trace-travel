@@ -1,0 +1,13 @@
+.footer-social-row {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-social-link {
+  height: 20px;
+  display: flex;
+}
+
+.footer-social-image {
+  height: 100%;
+}
